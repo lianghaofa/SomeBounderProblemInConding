@@ -1,31 +1,4 @@
-public class FractionToDecimal {
-
-    public static void main(String[] args) {
-        fractionToDecimal(-1, -2147483648);
-    }
-
-    public static String fractionToDecimal(int numerator, int denominator) {
-        if (numerator == Integer.MIN_VALUE && denominator == -1){
-            return "2147483648";
-        }
-        if (denominator == numerator){
-            return "1";
-        }
-        if (numerator == 0){
-            return "0";
-        }
-        long rest = numerator % denominator;
-        StringBuilder ans = new StringBuilder();
-        int a = numerator / denominator;
-        if (a == 0 && (numerator > 0 && denominator < 0 || numerator < 0 && denominator > 0)){
-            ans.append("-");
-        }
-        ans.append(a);
-        if (rest != 0){
-            ans.append(".");
-        }
-        HashMap<Long,Integer> map = new HashMap<>();
-        while (rest != 0){
+while (rest != 0){
             // we use long to store c,because integer maybe overflow.
             long c = (rest * 10) / denominator;
             // when rest is in the map (have the same rest), code will be in a loop.so we break this loop.
@@ -38,6 +11,3 @@ public class FractionToDecimal {
             ans.append(Math.abs(c));
             rest = (rest * 10) % denominator;
         }
-        return ans.toString();
-    }
-}
