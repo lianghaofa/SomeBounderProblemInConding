@@ -1,4 +1,4 @@
-while (rest != 0){
+        while (rest != 0){
             // we use long to store c,because integer maybe overflow.
             long c = (rest * 10) / denominator;
             // when rest is in the map (have the same rest), code will be in a loop.so we break this loop.
