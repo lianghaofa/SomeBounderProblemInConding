@@ -11,3 +11,8 @@
             ans.append(Math.abs(c));
             rest = (rest * 10) % denominator;
         }
+        // after gcd,we use string a1_a2 store a1/a2  
+        
+        int a = x1 - x2, b = y1 - y2;
+                int k = gcd(a, b);
+                String key = (a / k) + "_" + (b / k);
